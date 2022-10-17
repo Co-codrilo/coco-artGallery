@@ -1,4 +1,5 @@
 const producto=require("../models/productosModel");
+const fetch=(url)=>import('node-fetch').then(({default:fetch})=>fetch(url)); //Usurpación de require
 
 //Ver la lista de productos
 exports.getProducts=async(req,res,next) =>{
@@ -81,3 +82,27 @@ exports.newProduct=async(req,res,next)=>{
     })
 }
 //Crear nuevo producto /api/producto/nuevo
+
+
+
+//MÉTODO FETCH
+//Ver todos los productos
+function verProductos() {
+    fetch('http://localhost:4000/api/productos')
+    .then(res=>res.json())
+    .then(res=>console.log(res))
+    .catch(err=>console.error(err))
+}
+/* verProductos(); //Llamamos al método creado para probar la consulta */
+//Ver todos los productos
+
+//Ver por id
+function verProductoPorID(id) {
+    fetch('http://localhost:4000/api/producto/'+id)
+    .then(res=>res.json())
+    .then(res=>console.log(res))
+    .catch(err=>console.error(err))
+}
+/* verProductoPorID('634b3353edf7ff8bfd384f21'); //Probamos el método con un id */
+//Ver por id
+//MÉTODO FETCH

@@ -1,0 +1,19 @@
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+/* Fuentes */
+
+
+/* Variables */
+@import'./styles/_01variables.css';
+/* Variables */
+
+
+/* General */
+@import'./styles/_02general.css';
+/* General */
+
+
+/* Sections */
+@import'./styles/_03header.css';
+@import'./styles/_04footer.css';
+/* Sections */

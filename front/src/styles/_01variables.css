@@ -1,0 +1,10 @@
+:root {
+    --main-color: ;
+    --acent-color: ;
+    --neutral-color: ;
+    --main-font: 'Montserrat', sans-serif;
+    --normal: 500;
+    --semi-bold: 600;
+    --bold: 700;
+    --padding-x: 0 1rem;
+}
