@@ -1,7 +1,8 @@
 import React from 'react';
-import Footer from './componentes/Footer';
-import Header from './componentes/Header';
-import Header_perfil from './componentes/Header/Header_perfil';
+
+import Header_perfil from './Header/Header_perfil';
+import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   return (
