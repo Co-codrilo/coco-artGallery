@@ -1,0 +1,28 @@
+.home-container {
+  width: 100%;
+  padding: 2rem 4rem;
+}
+
+.card-container {
+  margin: 1rem 0;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, .7fr));
+  gap: 2rem;
+}
+.card {
+  height: 17rem;
+  border: solid .5px rgb(205, 205, 205);
+  border-radius: 1rem;
+}
+.card-img img {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 1rem 1rem 0 0;
+}
+.card-body {
+  text-align: center;
+  padding: .5rem;
+}

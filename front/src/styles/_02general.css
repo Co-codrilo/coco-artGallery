@@ -10,20 +10,12 @@ body {
   font-family: var(--main-font);
   overflow-x: hidden;
   background-color: rgb(230, 230, 230);
+  padding: 0;
+  
+  /* border: dotted; */
 }
 
 /* MOBILE */
-.header-perfil {
-  grid-area: header-perfil;
-  height: 3.5rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #593DA8;
-  color: #ebebeb;
-
-  /* border: dotted rgb(47, 255, 227); */
-}
 .grid-container {
   display: grid;
   height: 100vh;
@@ -36,6 +28,7 @@ body {
 
   /* border: dotted; */
 }
+
 /* MOBILE */
 
 
@@ -46,13 +39,14 @@ body {
   }
   .grid-container {
     display: grid;
-    height: 100vh;
+    /* height: 100vh; */
+    align-content: space-between;
     /* grid-template: 
     'header' auto
     'footer'auto/
     auto; */
 
-    /* border: dotted; */
+    /* border: dotted red; */
   }
 }
 
