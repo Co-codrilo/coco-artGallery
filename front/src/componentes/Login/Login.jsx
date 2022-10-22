@@ -4,24 +4,24 @@ const Login = () => {
   return (
     <>
       <div className="login">
-        <div className="form-container">
-          <div className="header-form">
+        <div className="login-form-container">
+          <div className="logo-login">
             <img src="../images/cocodrilos.png" alt="logo" className="logo" />
             <span>Cocodrilos</span>
           </div>
 
-          <form action="/" className="form">
+          <form action="/" className="login-form">
             <label for="email" className="label">Usuario</label>
-            <input type="text" id="email" placeholder="usuario@ejemplo.com" className="input input-email" />
+            <input type="text" id="email" placeholder="usuario@ejemplo.com" className="login-input" />
 
             <label for="password" className="label">Contraseña</label>
-            <input type="password" id="password" placeholder="*********" className="input input-password" />
+            <input type="password" id="password" placeholder="*********" className="login-input" />
 
-            <input type="submit" value="Login" className="primary-button login-button" />
+            <input type="submit" value="Login" className="login-button" />
           </form>
 
-          <div className="footer-form">
-            Arte de <span>Cocodrilos</span>
+          <div className="footer-login-form">
+            <p>Arte de <span>Cocodrilos</span></p>
           </div>
         </div>
       </div>
