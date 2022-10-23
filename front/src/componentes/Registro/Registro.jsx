@@ -13,23 +13,23 @@ const Registro = () => {
                     <div className='registro-fields'>
                         <div className='registro-field'>
                             <label for='nombre'>Nombre:</label>
-                            <input type='text' id='nombre'></input>  
-                        </div>
-                        <div className='registro-field'>
-                            <label for='email'>Email:</label>
-                            <input type='text' id='email'></input>
+                            <input type='text' id='nombre' placeholder='Pepito'></input>  
                         </div>
                         <div className='registro-field'>
                             <label for='apellido'>Apellido:</label>
-                            <input type='text' id='apellido'></input>
+                            <input type='text' id='apellido' placeholder='Pérez'></input>
+                        </div>
+                        <div className='registro-field'>
+                            <label for='email'>Email:</label>
+                            <input type='text' id='email' placeholder='pepito@ejemplo.com'></input>
                         </div>
                         <div className='registro-field'>
                             <label for='password'>Contraseña:</label>
-                            <input type='password' id='password'></input>
+                            <input type='password' id='password' placeholder='********'></input>
                         </div>
                     </div>
-                    <input type="submit" value="Registrarse" className="registro-button" /> 
-                    <div className="footer-login-form">
+                    <button type="submit" className="registro-button">Continuar</button> 
+                    <div className="footer-registro-form">
                         <p>Arte de <span>Cocodrilos</span></p>
                     </div>    
                 </form>
