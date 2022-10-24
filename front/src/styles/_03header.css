@@ -72,6 +72,12 @@ header {
 .search-container button {
   width: 2rem;
   border-radius: 0 .5rem .5rem 0 ;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: var(--acent-color);
+  color: white;
 }
 
 .menu a {
