@@ -4,6 +4,7 @@ import Login from '../componentes/Login/Login';
 import AppOld from '../componentes/AppOld';
 import Registro from '../componentes/Registro/Registro'
 import Sales from './../componentes/Sales/Sales';
+import Client from '../componentes/Client';
 
 export const App = () => {
     return(
@@ -13,6 +14,7 @@ export const App = () => {
                 <Route path="/login" element={<Login/>} />
                 <Route path="/registro" element={<Registro/>} />
                 <Route path="/ventas" element={<Sales/>} />
+                <Route path='/client' element={<Client/>} />
             </Routes>
         </BrowserRouter>
     )

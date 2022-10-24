@@ -57,6 +57,22 @@ header {
   align-items: center;
   font-size: 1em;
 }
+.search-container form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+.search-container input {
+  width: 70%;
+  padding: .5rem .7rem;
+  border-radius: .5rem 0 0 .5rem;
+}
+
+.search-container button {
+  width: 2rem;
+  border-radius: 0 .5rem .5rem 0 ;
+}
 
 .menu a {
   text-decoration: none;
