@@ -10,11 +10,11 @@ export const App = () => {
     return(
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<AppOld />} />
+                <Route path="/admin" element={<AppOld />} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/registro" element={<Registro/>} />
                 <Route path="/ventas" element={<Sales/>} />
-                <Route path='/client' element={<Client/>} />
+                <Route path='/' element={<Client/>} />
             </Routes>
         </BrowserRouter>
     )

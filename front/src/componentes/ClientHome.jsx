@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from "react-redux";
+import { getProducts } from '../actions/productActions';
 
 const ClientHome = () => {
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    dispatch(getProducts());
+  }, [dispatch])
+
   return (
     <div className="home-container">
       <h1>Galería</h1>
