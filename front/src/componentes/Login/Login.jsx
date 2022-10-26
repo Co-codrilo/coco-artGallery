@@ -1,10 +1,6 @@
 import React, { useRef} from 'react'
 import { useNavigate } from "react-router-dom";
 
-const users = [
-  {"id":"1", "rol":"user","user": "client@example.com", "password": "user"},
-  {"id":"2", "rol":"admin", "user": "admin@example.com", "password": "admin"}
-]
 
 const Login = () => {
 
@@ -15,20 +11,22 @@ const Login = () => {
     navigate("/registro");
   }
 
-  //Validacion del login 
+  //Validacion de prueba del login 
   const form = useRef(null);
   const authLogin = (event) =>{
     event.preventDefault();
     const formData = new FormData(form.current);
 
-    if(users.rol == "user"){
+    //Toma los datos del formulario
+    let email = formData.get("email");
+    let password = formData.get("password");
+
+    if(email === "admin@coco.co" && password === "admin"){
       navigate("/")
-    }else if(users.rol == "admin"){
-      navigate("/")
+    }else{
+      navigate("/client")
     }
 
-    console.log(formData.get("email"));
-    console.log(formData.get("password"));
   }
 
   return (
