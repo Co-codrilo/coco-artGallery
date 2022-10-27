@@ -7,6 +7,7 @@ import Sales from './../componentes/Sales/Sales';
 import Client from '../componentes/Client';
 import ListaUsuarios from '../componentes/Usuarios/ListaUsuarios';
 import UpdateUsuario from '../componentes/Usuarios/UpdateUsuario';
+import ListaPedidos from '../componentes/Usuarios/ListaPedidos';
 
 
 export const App = () => {
@@ -20,6 +21,7 @@ export const App = () => {
                 <Route path='/client' element={<Client/>} />
                 <Route path='/ListaUsuarios' element={<ListaUsuarios/>} />
                 <Route path='/UpdateUsuario' element={<UpdateUsuario/>} />
+                <Route path='/ListaPedidos' element={<ListaPedidos/>} />
 
             </Routes>
         </BrowserRouter>
