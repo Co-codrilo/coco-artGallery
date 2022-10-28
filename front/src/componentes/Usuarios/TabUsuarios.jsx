@@ -1,5 +1,106 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+const users = [
+  {
+    id: "1",
+    documento: "7.456.452",
+    nombres: "Juana",
+    apellidos: "Barrera Quito",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "2",
+    documento: "7.456.452",
+    nombres: "Miguel",
+    apellidos: "Angel Ramos",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "3",
+    documento: "7.456.452",
+    nombres: "Daniel",
+    apellidos: "Fernandez Rosas",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "4",
+    documento: "7.456.452",
+    nombres: "Felipe",
+    apellidos: "Garnica Barrera",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "5",
+    documento: "7.456.452",
+    nombres: "Manuel",
+    apellidos: "Monroy Pulido",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "6",
+    documento: "7.456.452",
+    nombres: "Cristian",
+    apellidos: "Ramirez Lopez",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "1",
+    documento: "7.456.452",
+    nombres: "Juana",
+    apellidos: "Barrera Quito",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "2",
+    documento: "7.456.452",
+    nombres: "Miguel",
+    apellidos: "Angel Ramos",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "3",
+    documento: "7.456.452",
+    nombres: "Daniel",
+    apellidos: "Fernandez Rosas",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "4",
+    documento: "7.456.452",
+    nombres: "Felipe",
+    apellidos: "Garnica Barrera",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "5",
+    documento: "7.456.452",
+    nombres: "Manuel",
+    apellidos: "Monroy Pulido",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+  {
+    id: "6",
+    documento: "7.456.452",
+    nombres: "Cristian",
+    apellidos: "Ramirez Lopez",
+    email: "juanabq@gmail.com",
+    direccion: "Cll.14 35-23",
+  },
+ 
+  
+];
 const TabUsuarios = () => {
   return (
     <div className="sales-card-body">
@@ -17,162 +118,28 @@ const TabUsuarios = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
-
-          <tr className="table">
-            <td>7.458.459</td>
-            <td>Juana</td>
-            <td>Barrera Quito</td>
-            <td>juanabq@gmail.com</td>
-            <td>Cll. 14 35-23</td>
-            <td>
-              <img src="../images/update.png" alt="update" width="15rem" />
-            </td>
-            <td>
-              {" "}
-              <img src="../images/delete.png" alt="delete" width="15rem" />
-            </td>
-            <td>
-              <img src="../images/shopping.png" alt="shopping" width="15rem" />
-            </td>
-          </tr>
+          {users.map((user) => (
+            <tr className="table" key={user.id}>
+              <td>{user.documento}</td>
+              <td>{user.nombres}</td>
+              <td>{user.apellidos}</td>
+              <td>{user.email}</td>
+              <td>{user.direccion}</td>
+              <td className="action-button-in-table">
+                <Link to={"/UpdateUsuario"}>
+                  <img src="../images/update.png" alt="update" />
+                </Link>
+              </td>
+              <td className="action-button-in-table">
+                <img src="../images/delete.png" alt="delete" />
+              </td>
+              <td className="action-button-in-table">
+                <Link to={"/ListaPedidos"}>
+                  <img src="../images/shopping.png" alt="shopping" />
+                </Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

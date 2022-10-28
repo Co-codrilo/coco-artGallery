@@ -22,7 +22,6 @@ export const App = () => {
                 <Route path='/ListaUsuarios' element={<ListaUsuarios/>} />
                 <Route path='/UpdateUsuario' element={<UpdateUsuario/>} />
                 <Route path='/ListaPedidos' element={<ListaPedidos/>} />
-
             </Routes>
         </BrowserRouter>
     )
