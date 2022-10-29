@@ -125,6 +125,7 @@ header {
     height: 30px;
     justify-content: center;
     align-items: center;
+    font-family: var(--logo-font);
 
     /* border: dotted blue; */
   }
@@ -163,6 +164,7 @@ header {
     height: 30px;
     display: flex;
     justify-content: center;
+    
 
     /* border: dotted rgb(3, 82, 41); */
   }
