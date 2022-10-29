@@ -32,6 +32,23 @@
   border-radius: 1rem;
 }
 
+.card-admin {
+  height: 21.5rem;
+  width: 12rem;
+  border: solid .5px rgb(205, 205, 205);
+  border-radius: 1rem;
+}
+
+.card-body-container-admin img{
+  width: 1.5rem;
+  margin: 0.5rem 1rem auto;
+}
+
+div.card-footer-admin{
+  display: flex;
+  justify-content: center;
+}
+
 .card-img img {
   width: 100%;
   height: 12rem;
