@@ -9,6 +9,7 @@ import ListaUsuarios from '../componentes/Usuarios/ListaUsuarios';
 import UpdateUsuario from '../componentes/Usuarios/UpdateUsuario';
 import ListaPedidos from '../componentes/Usuarios/ListaPedidos';
 import DeleteUsuario from '../componentes/Usuarios/DeleteUsuario';
+import Cart from '../componentes/Cart';
 
 
 export const App = () => {
@@ -24,6 +25,7 @@ export const App = () => {
                 <Route path='/UpdateUsuario' element={<UpdateUsuario/>} />
                 <Route path='/ListaPedidos' element={<ListaPedidos/>} />
                 <Route path='/DeleteUsuario' element={<DeleteUsuario/>} />
+                <Route path='/cart' element={<Cart />}/>
 
             </Routes>
         </BrowserRouter>

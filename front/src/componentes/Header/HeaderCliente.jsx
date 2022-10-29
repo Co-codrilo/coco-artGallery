@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
-import Perfil from './Perfil'
+import PerfilClient from './PerfilClient'
 
 const HeaderCliente = () => {
   return (
@@ -16,7 +16,7 @@ const HeaderCliente = () => {
           </form>
         </menu>
         <div className="perfil-nav">
-          <Perfil />
+          <PerfilClient />
         </div>
       </nav>
     </header>

@@ -35,6 +35,12 @@ header {
   /* border: dotted rgb(47, 255, 227); */
 }
 
+.perfil{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .log {
   width: 3.5rem;
   height: 3.5rem;

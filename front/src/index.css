@@ -1,5 +1,6 @@
 /* Fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 /* Fuentes */
 
 
@@ -21,4 +22,5 @@
 @import'./styles/_08registro.css';
 @import'./styles/_09sales.css';
 @import'./styles/_10tabUsuarios.css';
+@import'./styles/_11cart.css';
 /* Sections */
