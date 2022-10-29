@@ -11,18 +11,55 @@
   gap: 2rem;
 }
 .card {
-  height: 17rem;
+  height: 19rem;
+  width: 12rem;
   border: solid .5px rgb(205, 205, 205);
   border-radius: 1rem;
 }
+
 .card-img img {
   width: 100%;
-  height: 10rem;
+  height: 12rem;
   object-fit: cover;
   object-position: top;
   border-radius: 1rem 1rem 0 0;
 }
+
 .card-body {
-  text-align: center;
+  text-align: left;
   padding: .5rem;
+}
+
+h5.card-title{
+  margin: 0;
+}
+
+.card-body .card-body-author{
+  font-size: 12px;
+  color: var(--acent-color);
+  margin: 0;
+}
+.card-body-artwork-data{
+  font-size: 11px;
+  color: gray;
+  margin: 0;
+}
+
+.card-body-container{
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-body button{
+  background-color: var(--main-color);
+  border-radius: 50%;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: 1rem;
+}
+
+.card-body button:hover{
+  background-color: var(--acent-color);
+  cursor: pointer;
 }
