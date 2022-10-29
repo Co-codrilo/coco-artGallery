@@ -8,6 +8,7 @@ import Client from '../componentes/Client';
 import ListaUsuarios from '../componentes/Usuarios/ListaUsuarios';
 import UpdateUsuario from '../componentes/Usuarios/UpdateUsuario';
 import ListaPedidos from '../componentes/Usuarios/ListaPedidos';
+import DeleteUsuario from '../componentes/Usuarios/DeleteUsuario';
 
 
 export const App = () => {
@@ -22,6 +23,8 @@ export const App = () => {
                 <Route path='/ListaUsuarios' element={<ListaUsuarios/>} />
                 <Route path='/UpdateUsuario' element={<UpdateUsuario/>} />
                 <Route path='/ListaPedidos' element={<ListaPedidos/>} />
+                <Route path='/DeleteUsuario' element={<DeleteUsuario/>} />
+
             </Routes>
         </BrowserRouter>
     )

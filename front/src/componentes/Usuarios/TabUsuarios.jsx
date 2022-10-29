@@ -131,7 +131,9 @@ const TabUsuarios = () => {
                 </Link>
               </td>
               <td className="action-button-in-table">
+              <Link to={"/DeleteUsuario"}>
                 <img src="../images/delete.png" alt="delete" />
+                </Link>
               </td>
               <td className="action-button-in-table">
                 <Link to={"/ListaPedidos"}>
