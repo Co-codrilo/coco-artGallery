@@ -2,6 +2,21 @@
   width: 100%;
   padding: 2rem 4rem;
 }
+.header-container-galery-admin{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container-galery-admin button{
+  background-color: var(--main-color);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: var(--normal);
+  height: 40px;
+  padding: 0rem 1rem;
+}
 
 .card-container {
   margin: 1rem 0;

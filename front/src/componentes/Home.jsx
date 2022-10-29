@@ -3,7 +3,10 @@ import React from 'react'
 const Home = () => {
   return (
     <div className="home-container">
-      <h1>Galería</h1>
+      <div className="header-container-galery-admin">
+        <h1>Galería</h1>
+        <button>Agregar obra</button>
+      </div>
       <section className="card-container">
         <div className="card">
           <div className="card-img">
