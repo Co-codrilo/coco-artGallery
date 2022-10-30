@@ -34,7 +34,7 @@ const CartHome = () => {
 
           <section className='registro-fields-cart '>
 
-            <table className="table table-sm align-middle shadow-sm">
+            <table className="myTable shadow-sm">
               <thead>
                 <tr>
                   <th></th>
@@ -67,6 +67,7 @@ const CartHome = () => {
                 <td></td>
                 <td></td>
                 <td></td>
+                <td>USD</td>
                 <td>
                   {/* {totalProduct} */}
                 </td>

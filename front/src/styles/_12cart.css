@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
 }
+
 /* ---- FORM ---- */
 .registro-form-container-cart {
   background-color: var(--secondary-color);
@@ -17,6 +18,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .registro-form-cart {
   position: relative;
   max-width: 800px;
@@ -27,14 +29,42 @@
   align-items: center;
   justify-content: center;
 }
-.registro-fields-cart{
+
+.registro-fields-cart {
   margin-top: 1rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
+/* .registro-fields-cart table {
+  
+} */
+.myTable {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.179);
+  border-radius: 1.5rem;
+}
+
+.myTable tr {
+  border-bottom: solid 1px rgba(245, 245, 245, 0.656);
+}
+.myTable thead tr th {
+  padding: 1rem;
+}
+
+.myTable tbody tr td {
+  padding: .2rem 1rem;
+}
+
+.myTable tfoot td {
+  padding: 1rem;
+}
+
 .image-container-cart {
   height: 5rem;
   width: 5rem;
 }
+
 .image-container-cart img {
   width: 100%;
   height: 100%;
@@ -42,6 +72,7 @@
   object-position: top;
   border-radius: 1rem;
 }
+
 /* ---- FORM ---- */
 
 
@@ -103,6 +134,7 @@
 .cancelar:hover {
   color: black;
 }
+
 /* ---- BOTONES ---- */
 
 
@@ -121,4 +153,5 @@
   }
 
 }
+
 /* TABLET */
