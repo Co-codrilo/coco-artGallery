@@ -11,6 +11,7 @@ import Cart from './Cart';
 import Dashboard from './admin/Dashboard';
 import Registro from '../components/Registro/Registro.jsx'
 import Login from '../components/Login/Login.jsx'
+import ProductsList from './admin/ProductsList';
 
 const AppOld = () => {
 
@@ -28,7 +29,8 @@ const AppOld = () => {
             <Route path='/producto/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path="/registro" element={<Registro />} />
-            <Route path='admin/dashboard' element={<Dashboard/>}/>
+            <Route path='/dashboard' element={<Dashboard/>}/>
+            <Route path='/ListaProductos' element={<ProductsList/>}/>
           </Routes>
         </div>
         <Footer />

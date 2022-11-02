@@ -19,7 +19,7 @@ const AdminMenu = () => {
               <a href='#productSubmenu' data-toggle='collapse' aria-expanded='false' className='dropdown-toggle'><i className='fa fa-product-hunt'>Productos</i></a>
               <ul className='collapse list-unstyled' id='productSubmenu'>
                 <li>
-                  <Link to='/'><i className='fa fa-clipboard'></i>Lista de productos</Link>
+                  <Link to='/ListaProductos'><i className='fa fa-clipboard'></i>Lista de productos</Link>
                 </li>
                 <li>
                   <Link to='/'><i className='fa fa-plus'></i>Nuevo producto</Link>

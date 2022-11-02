@@ -10,7 +10,7 @@ const PerfilClient = () => {
           </Link>
           <div className='dropdown-menu' aria-labelledby='dropDownMenu'>
             <Link to='/' className='dropdown-item'>Cliente</Link>
-            <Link to='admin/dashboard' className='dropdown-item'>Administrador</Link>
+            <Link to='/dashboard' className='dropdown-item'>Administrador</Link>
             <Link to='/' className='dropdown-item'>Cerrar Sesión</Link>
           </div>
 
