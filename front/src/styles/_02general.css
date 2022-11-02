@@ -15,6 +15,18 @@ body {
   /* border: dotted; */
 }
 
+#login_btn,
+#view_btn {
+  background-color: var(--acent-color);
+  color: white;
+  padding: 0.4rem 1.8rem;
+  font-family: calibri;
+  align-self: center;
+}
+#view_btn:hover{
+  color:black
+}
+
 /* MOBILE */
 .grid-container {
   display: grid;

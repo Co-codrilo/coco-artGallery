@@ -4,7 +4,7 @@ import PerfilClient from './PerfilClient'
 
 const HeaderCliente = () => {
   return (
-    <header>
+    <header className='header'>
       <nav className='nav'>
         <div className="logo-nav">
           <Logo />
