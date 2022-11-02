@@ -1,6 +1,8 @@
-import React from "react";
-
-const data = [
+import React, { useState } from "react";
+import BootstrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
+import { Button, Modal } from "react-bootstrap";
+const dataArtworks = [
   {
     _id: "6355cf38469d5456240f6dc8",
     fechaVenta: "02/05/2022",
@@ -9,6 +11,7 @@ const data = [
     categoria: "Escultura",
     vendedor: "Lina Desalvador",
     precio: "$103,600",
+    pathImagen: "",
   },
   {
     _id: "6355cf38469d5456240f6dc7",
@@ -173,38 +176,118 @@ const data = [
     precio: "$103,600",
   },
 ];
+
 const SalesTable = () => {
+  const [modalInfo, setModalInfo] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const columns = [
+    { dataField: "_id", text: "Id", footer: "" },
+    { dataField: "nombre", text: "Obra", footer: "" },
+    { dataField: "autor", text: "Autor", footer: "" },
+    { dataField: "categoria", text: "Category", footer: "" },
+    { dataField: "vendedor", text: "Vendedor", footer: "Total" },
+    { dataField: "precio", text: "Precio", footer: "$5.999.452" },
+  ];
+
+  const rowEvents = {
+    onClick: (e, row) => {
+      console.log(row);
+      setModalInfo(row);
+      toggleTrueFalse();
+    },
+  };
+  const toggleTrueFalse = () => {
+    setShowModal(handleShow);
+  };
+
+  const ModalContent = () => {
+    return (
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Detalle de la venta</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="card-img-modal">
+            <img src={"./images/obras/anni-roenkae.jpg"} alt="img" />
+          </div>
+          <div className="card-description-modal">
+            <div className="row-info-modal">
+              <p className="label-info-modal">Identificador:</p>
+              <p> {modalInfo._id}</p>
+            </div>
+            <div className="row-info-modal">
+              <p className="label-info-modal">Fecha de venta:</p>
+              <p> {modalInfo.fechaVenta} </p>
+            </div>
+            <div className="row-info-modal">
+              <p className="label-info-modal">Nombre de la obra:</p>
+              <p> {modalInfo.nombre}</p>
+            </div>
+            <div className="row-info-modal">
+              <p className="label-info-modal">Autor:</p>
+              <p> {modalInfo.autor}</p>
+            </div>
+            <div className="row-info-modal">
+              <p className="label-info-modal">Categoria: </p>
+              <p> {modalInfo.categoria}</p>
+            </div>
+            <div className="row-info-modal">
+              <p className="label-info-modal">Precio: </p>
+              <p> {modalInfo.precio}</p>
+            </div>
+            <div className="row-info-modal">
+              <p className="label-info-modal">Vendedor:</p>
+              <p> {modalInfo.vendedor}</p>
+            </div>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  };
+
   return (
     <>
       <div className="sales-card-body">
-        <h2>Obras vendidas</h2>
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Obra</th>
-              <th>Autor</th>
-              <th>Categoria</th>
-              <th>Vendedor</th>
-              <th>Precio</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((sale) => (
-              <tr key={sale._id}>
-                <td>{sale.fechaVenta}</td>
-                <td>{sale.nombre}</td>
-                <td>{sale.autor}</td>
-                <td>{sale.categoria}</td>
-                <td>{sale.vendedor}</td>
-                <td>{sale.precio}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div class="row g-2 mb-3">
+          <h2 className="col-md">Obras vendidas</h2>
+          <div class="col-md">
+            <div class="form-floating">
+              <input
+                type="date"
+                class="form-control"
+                id="inputStartDate"
+              ></input>
+              <label htmlFor="inputStartDate">Fecha de inicio</label>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="form-floating">
+              <input type="date" class="form-control" id="inputEndDate"></input>
+              <label htmlFor="inputEndDate">Fecha fin</label>
+            </div>
+          </div>
+        </div>
+
+        <BootstrapTable
+          keyField="id"
+          data={dataArtworks}
+          columns={columns}
+          pagination={paginationFactory()}
+          rowEvents={rowEvents}
+        />
+        {show ? <ModalContent /> : null}
       </div>
     </>
   );
 };
-
 export default SalesTable;
