@@ -1,8 +1,8 @@
-const app=require("./app.js")
-const connectDatabase = require("./config/database.js");
+const app=require("./app")
+const connectDatabase = require("./config/database");
 
 //Setear el archivo de configuración
-const dotenv = require('dotenv');
+const dotenv=require("dotenv");
 dotenv.config({path: 'back/config/config.env'})
 
 //Configurar base de datos

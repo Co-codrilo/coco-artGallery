@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 const Logo = () => {
   return (
-    <Link to={'/client'}>
+    <Link to={'/'}>
       <div className="logo">
         <picture><img src='./images/cocodrilos.png' alt="Logo" /></picture>
       </div>

@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {App} from './routes/App';
-import './index.css';
+import App from './components/AppOld';
 import { Provider } from 'react-redux';
 import store from './store';
+import { positions, transitions, Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
+import './index.css';
+
+const options = {
+  timeout: 3000,
+  position: positions.BOTTOM_CENTER,
+  transition: transitions.SCALE
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App/>
+    <AlertProvider template={AlertTemplate} {...options}>
+      <App />
+    </AlertProvider>
   </Provider>
 );
-
