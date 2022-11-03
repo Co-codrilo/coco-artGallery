@@ -12,6 +12,7 @@ import Dashboard from './admin/Dashboard';
 import Registro from '../components/Registro/Registro.jsx'
 import Login from '../components/Login/Login.jsx'
 import ProductsList from './admin/ProductsList';
+import SalesTable from './Sales/SalesTable';
 
 const AppOld = () => {
 
@@ -31,6 +32,7 @@ const AppOld = () => {
             <Route path="/registro" element={<Registro />} />
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/ListaProductos' element={<ProductsList/>}/>
+            <Route path="/ventas" element={<SalesTable />} />
           </Routes>
         </div>
         <Footer />

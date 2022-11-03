@@ -260,11 +260,11 @@ const SalesTable = () => {
       <div className="sales-card-body">
         <div class="row g-2 mb-3">
           <h2 className="col-md">Obras vendidas</h2>
-          <div class="col-md">
-            <div class="form-floating">
+          <div className="col-md">
+            <div className="form-floating">
               <input
                 type="date"
-                class="form-control"
+                className="form-control"
                 id="inputStartDate"
               ></input>
               <label htmlFor="inputStartDate">Fecha de inicio</label>
