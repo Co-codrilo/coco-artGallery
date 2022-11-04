@@ -1,33 +1,8 @@
 import React from 'react';
-import Footer from '../Footer';
-import Logo from '../Header/Logo';
-
-const Checkout_Header = () => {
-  return (
-    <header>
-      <nav className='nav checkout-nav'>
-        <div className='logo-nav checkout-logo'>
-          <Logo />
-          <span>Cocodrilos Checkout</span>
-        </div>
-        <div className='menu-nav' />
-        <div className='perfil-nav'>
-          Perfil
-        </div>
-        <div className='cart-nav'>
-          <a href='/' className='carro-compra'>
-            <img src='../images/shopping-cart.png' alt='carrito' />
-          </a>
-        </div>
-      </nav>
-    </header>
-  )
-}
 
 const Envio = () => {
   return (
     <main>
-      <Checkout_Header />
       <div className='checkout'>
         <div className="checkout-progress">
           <div className="checkout-step">
@@ -59,14 +34,28 @@ const Envio = () => {
                 <span>Envio</span>
               </div>
               <div className="env-ret-opt">
-                <input type="radio" />
-                <h5>Estandar</h5>
-                <span>$5000</span>
+                <label className="customradio">
+                  <input type="radio" name='useropt'/>
+                  <span className="radio-btn"><img src='../images/check.png' />
+                  <div className='opt-cont'> 
+                      <h5>Estandar</h5>
+                      <span>Llega en 6 días</span><br/>
+                      <span>5000$</span>
+                  </div>
+                  </span>
+                </label>
               </div>
               <div className="env-ret-opt">
-                <input type="radio" />
-                <h5>Express</h5>
-                <span>$15000</span>
+                <label className="customradio">
+                  <input type="radio" name='useropt'/>
+                  <span className="radio-btn"><img src='../images/check.png' />
+                    <div className='opt-cont'> 
+                      <h5>Express</h5>
+                      <span>Llega en 1 día</span><br/>
+                      <span>9000$ </span>
+                    </div>
+                  </span>
+                </label>
               </div>
             </div>
             <div className="env-ret">
@@ -74,11 +63,22 @@ const Envio = () => {
                 <img src='../images/ret.png' />
                 <span>Retiro</span>
               </div>
+              <div className="env-ret-opt">
+                <label className="customradio">
+                  <input type="radio" name='useropt'/>
+                  <span className="radio-btn"><img src='../images/check.png' />
+                  <div className='opt-cont'> 
+                      <h5>Bogotá, Carrera 234</h5>
+                      <span>Llega hoy</span><br/>
+                      <span>2000$</span>
+                  </div>
+                  </span>
+                </label>
+              </div>
             </div>
           </form>
         </div>
       </div>
-      <Footer />
     </main>
   )
 }

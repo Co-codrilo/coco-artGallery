@@ -1,4 +1,4 @@
-/* .checkout {
+ .checkout {
   width: 100%;
   height: calc(100vh - (3.5rem + 3.5rem));
   display: flex;
@@ -7,22 +7,73 @@
   justify-content: center;
 }
 
-.checkout-logo {
+.checkout-progress {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  font-family: var(--logo-font);
+  margin-bottom: 5px;
+  width: 30%;
 }
 
-.checkout-nav {
-  grid-template:
-    'logo-nav menu-nav perfil-nav cart-nav' auto/
-    25% auto 15% 10%;
+.checkout-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.cart-nav img {
-  width: 1.5rem;
-  height: 1.5rem;
-  object-fit: cover;
+.step-check {
+  background-color: var(--main-color);
+  height: 20px;
+  width: 20px;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  background-image: url(/images/check.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  position: relative;
+}
+
+.checkout-step:nth-of-type(3) .step-check::after {
+  display: none;
+}
+
+.checkout-step:nth-of-type(3) .step-check {
+  background-image: none;
+  background-color: white;
+  border: 2px solid black;
+}
+
+.checkout-step:nth-of-type(2) .step-check::after {
+  background-color: black;
+}
+
+.checkout-step:nth-of-type(2) .step-check {
+  background-image: none;
+  background-color: var(--secondary-color);
+  border: 2px solid black;
+}
+
+.step-check::after {
+  content: "";
+  width: 15vw;
+  height: 2px;
+  background-color: inherit;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateX(100%) translateY(-50%);
+}
+
+.checkout-form h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cambiardir a{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 0.65rem;
+  margin-left: 0.2rem;
 }
 
 .env-ret-form {
@@ -40,74 +91,61 @@
 .env-ret {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  width: calc(100% / 3);
 }
 
-.env-ret-opt {
-  width: 100%;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 7px 7px 15px rgba(2, 28, 53, 0.08);
-  cursor: pointer;
-  outline: none;
+.customradio img{
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: cover;
 }
 
-.checkout-progress {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 30%;
-}
-
-.checkout-step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.step-check {
-  background-color: var(--main-color);
-  height: 30px;
-  width: 30px;
-  border-radius: 30px;
-  margin-bottom: 1rem;
-  background-image: url(../../public/images/check.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 60%;
-  position: relative;
-}
-
-.checkout-step:nth-of-type(3) .step-check::after {
+.customradio input{
   display: none;
 }
 
-.checkout-step:nth-of-type(3) .step-check {
-  background-image: none;
-  background-color: white;
-  border: 2px solid grey;
+.radio-btn{
+  width: 180px;
+  height: 120px;
+  border: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 20px #c3c3c367;
+  cursor: pointer;
 }
 
-.checkout-step:nth-of-type(2) .step-check::after {
-  background-color: grey;
-}
-
-.checkout-step:nth-of-type(2) .step-check {
-  background-image: none;
-  background-color: var(--secondary-color);
-  border: 2px solid grey;
-}
-
-.step-check::after {
-  content: "";
-  width: 15vw;
-  height: 2px;
-  background-color: inherit;
+.radio-btn > img{
+  background-color: var(--main-color);
   position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateX(100%) translateY(-50%);
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) scale(4);
+  border-radius: 50px;
+  padding: 3px;
+  transition: 0.2s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.radio-btn .opt-cont{
+  align-self: center;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: 10%;
+  text-align: center;
+}
+
+.customradio input:checked + .radio-btn {
+  border: 3px solid var(--main-color);
+}
+
+.customradio input:checked + .radio-btn > img{
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
 @media(max-width: 768px) {
@@ -120,4 +158,8 @@
     align-items: center;
     justify-content: space-between;
   }
-} */
+
+  .env-ret{
+    width: 100%;
+  }
+} 
