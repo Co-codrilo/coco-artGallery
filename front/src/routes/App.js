@@ -1,8 +1,8 @@
-/*import React from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-/* import AppOld from '../componentes/AppOld'; 
+/* import AppOld from '../componentes/AppOld'; */
 import Client from '../components/Client';
-/* import { ProductDetails } from '../components/products/ProductDetails'; 
+/* import { ProductDetails } from '../components/products/ProductDetails'; */
 import Registro from '../components/Registro/Registro.jsx'
 
 export const App = () => {
@@ -12,7 +12,7 @@ export const App = () => {
         {/* <Route path="/" element={<AppOld />} />
         <Route path="/admin" element={<AppOld />} />
         <Route path="/producto/:id" element={<ProductDetails />} />
-        <Route path='/client' element={<Client />}/> }
+        <Route path='/client' element={<Client />}/> */}
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
         <Route path="/ventas" element={<Sales />} />
@@ -26,4 +26,4 @@ export const App = () => {
       </Routes>
     </BrowserRouter>
   )
-};*/
+};
