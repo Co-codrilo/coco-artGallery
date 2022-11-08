@@ -1,6 +1,7 @@
-/*import React from 'react';
+/*
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-/* import AppOld from '../componentes/AppOld'; 
+import AppOld from '../componentes/AppOld'; 
 import Client from '../components/Client';
 /* import { ProductDetails } from '../components/products/ProductDetails'; 
 import Registro from '../components/Registro/Registro.jsx'
@@ -26,4 +27,5 @@ export const App = () => {
       </Routes>
     </BrowserRouter>
   )
-};*/
+};
+*/
