@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"; 
 
 const productsCart = [
   {
@@ -77,7 +78,9 @@ const CartHome = () => {
           </section>
 
           <div className='button-cart'>
-            <button type="submit" className="registro-button-cart comprar">Finalizar compra</button>
+            <Link to={"/envio"}>
+              <button type="submit" className="registro-button-cart comprar">Finalizar compra</button>
+            </Link>
             <button type="submit" className="registro-button-cart cancelar ">Cancelar</button>
           </div>
 
