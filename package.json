@@ -1,9 +1,8 @@
 {
-  "name": "vetyshop",
+  "name": "coco-artgallery",
   "version": "1.0.0",
-  "description": "Tienda virtual de productos para mascotas",
+  "description": "Galeria de arte",
   "main": "server.js",
-  
   "scripts": {
     "start": "node back/server.js",
     "dev": "SET NODE_ENV=DEVELOPMENT& nodemon back/server",
@@ -11,19 +10,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OZZYTA/VetyShop.git"
+    "url": "git+https://github.com/Co-codrilo/coco-artGallery.git"
   },
-  "author": "Natali Velasquez",
+  "author": "Cocodrilos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OZZYTA/VetyShop/issues"
+    "url": "https://github.com/Co-codrilo/coco-artGallery/issues"
   },
-  "homepage": "https://github.com/OZZYTA/VetyShop#readme",
+  "homepage": "https://github.com/Co-codrilo/coco-artGallery#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.1",
-    "mongoose": "^6.6.4",
-    "node-fetch": "^3.2.10"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.1",
+    "node-fetch": "^3.2.10",
+    "nodemailer": "^6.8.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
