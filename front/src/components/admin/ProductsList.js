@@ -80,14 +80,14 @@ export const ProductsList = () => {
   return (
     <Fragment>
       <MetaData title={'All Products'} />
-      <div className="row">
+      <div className="row p-3">
         <div className="col-12 col-md-2">
           <AdminMenu />
         </div>
 
         <div className="col-12 col-md-10">
           <Fragment>
-            <h1 className="my-5">Productos Registrados</h1>
+            <h3 className="my-5">Productos Registrados</h3>
 
             {loading ? <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i> : (
               <MDBDataTable
