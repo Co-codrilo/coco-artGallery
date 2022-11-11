@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../actions/productActions'
 import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
-//import Pagination from 'react-js-pagination'
+import Pagination from 'react-js-pagination'
+/* import { Pagination } from "react-js-pagination"; */
 
 export const Home = () => {
   const params = useParams();
@@ -66,7 +67,7 @@ export const Home = () => {
             </section>
           </div>
 
-          {/* <div className='d-flex justify-content-center mt-5'>
+          <div className='d-flex justify-content-center mt-5'>
             <Pagination
               activePage={currentPage}
               itemsCountPerPage={resPerPage}
@@ -79,7 +80,7 @@ export const Home = () => {
               itemClass='page-item'
               linkClass='page-link'
             />
-          </div> */}
+          </div>
 
         </Fragment>
       )}
