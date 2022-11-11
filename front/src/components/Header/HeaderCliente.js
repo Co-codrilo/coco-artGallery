@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from './Logo'
 import PerfilClient from './PerfilClient'
+import Search from './Search'
 
 const HeaderCliente = () => {
   return (
@@ -9,12 +10,8 @@ const HeaderCliente = () => {
         <div className="logo-nav">
           <Logo />
         </div>
-        <menu className="menu search-container">
-          <form >
-            <input type="search" placeholder="¿Qué producto busca?" name="search" />
-            <button type="submit"><i className="fa fa-search"></i></button>
-          </form>
-        </menu>
+        {/* Aquí va el campo de búsqueda */}
+        <Search />
         <div className="perfil-nav">
           <PerfilClient />
         </div>

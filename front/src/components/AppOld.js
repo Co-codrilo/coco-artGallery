@@ -33,6 +33,7 @@ const AppOld = () => {
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/ListaProductos' element={<ProductsList/>}/>
             <Route path='/nuevoProducto' element={<NewProduct/>}/>
+            <Route path='/search/:keyword' element={<ClientHome/>}/>
           </Routes>
         </div>
         <Footer />
