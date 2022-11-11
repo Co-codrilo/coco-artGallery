@@ -1,4 +1,4 @@
-const { query } = require("express");
+/* const { query } = require("express"); */
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const producto = require("../models/productos");
 const APIFeatures = require("../utils/apiFeatures");
