@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../actions/productActions'
 import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
+//import Pagination from 'react-js-pagination'
 
 export const Home = () => {
   const params = useParams();
