@@ -5,7 +5,7 @@ const AdminMenu = () => {
   return (
     <main>
       
-      <a class="btn" data-bs-toggle="offcanvas" data-toggle='collapse' aria-expanded='false' href="#adminMenu" role="button" aria-controls="adminMenu"><i class="bi bi-list"></i></a>
+      <a className="btn" data-bs-toggle="offcanvas" data-toggle='collapse' aria-expanded='false' href="#adminMenu" role="button" aria-controls="adminMenu"><i className="bi bi-list"></i></a>
 
       <div className='sidebar-wrapper collapse list-unstyled' id='adminMenu'>
         <nav id='sidebar'>
