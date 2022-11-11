@@ -12,7 +12,7 @@ const HeaderCliente = () => {
         <menu className="menu search-container">
           <form >
             <input type="search" placeholder="¿Qué producto busca?" name="search" />
-            <button type="submit"><i class="fa fa-search"></i></button>
+            <button type="submit"><i className="fa fa-search"></i></button>
           </form>
         </menu>
         <div className="perfil-nav">
