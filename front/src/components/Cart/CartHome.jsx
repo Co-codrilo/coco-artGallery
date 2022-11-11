@@ -95,5 +95,3 @@ const CartHome = () => {
     </main>
   )
 }
-
-export default CartHome

@@ -82,5 +82,3 @@ const Envio = () => {
     </main>
   )
 }
-
-export default Envio

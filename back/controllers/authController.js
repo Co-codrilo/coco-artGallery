@@ -264,3 +264,9 @@ exports.deleteUser= catchAsyncErrors(async(req,res,next)=>{
   })
 })
 /* Eliminar usuario (admin) */
+
+  res.status(201).json({
+    success: true,
+    user
+  })
+})
