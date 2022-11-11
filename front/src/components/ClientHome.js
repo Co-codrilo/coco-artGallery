@@ -5,10 +5,13 @@ import { getProducts } from '../actions/productActions'
 import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
 import Pagination from 'react-js-pagination'
+import Slider from 'rc-slider'
+import 'rc-slider/assets/index.css'
 
 export const Home = () => {
   const params = useParams();
   const keyword = params.keyword;
+  const [precio, setPrecio] = useState([100000, 10000000])
   const [currentPage, setCurrentPage] = useState(1)
   const { loading, products, error, resPerPage, productsCount } = useSelector(state => state.products)
   const alert = useAlert();
@@ -19,8 +22,8 @@ export const Home = () => {
       return alert.error(error)
     }
 
-    dispatch(getProducts(currentPage, keyword));
-  }, [dispatch, alert, error, currentPage, keyword])
+    dispatch(getProducts(currentPage, keyword, precio));
+  }, [dispatch, alert, error, currentPage, keyword, precio])
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber)
@@ -35,6 +38,30 @@ export const Home = () => {
 
           <div className='home-container'>
             <h1 id="encabezado_productos">Galería</h1>
+
+            <div className='d-flex justify-content-center mb-5 mt-3 px-5'>
+              <div className='col-6'>
+                <Slider
+                  range
+                  className='t-slider'
+                  marks={{
+                    100000: `$100000`,
+                    10000000: `$10000000`
+                  }}
+                  min={100000}
+                  max={10000000}
+                  defaultValue={[100000, 10000000]}
+                  tipFormatter={value => `$${value}`}
+                  tipProps={{
+                    placement: 'top',
+                    prefixCls: 'rc-slider-tooltip',
+                    viseble: true
+                  }}
+                  value={precio}
+                  onChange={precio => setPrecio(precio)}
+                />
+              </div>
+            </div>
 
             <section id="/* productos */" className='card-container'>
               {/* <div className='row'> */}
