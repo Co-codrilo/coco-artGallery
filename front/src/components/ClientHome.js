@@ -38,8 +38,9 @@ export const Home = () => {
 
           <div className='home-container'>
             <h1 id="encabezado_productos">Galería</h1>
-
-            <div className='d-flex justify-content-center mb-5 mt-3 px-5'>
+            
+            {/* Filtro Precio */}
+            {/* <div className='d-flex justify-content-center mb-5 mt-3 px-5'>
               <div className='col-6'>
                 <Slider
                   range
@@ -61,7 +62,9 @@ export const Home = () => {
                   onChange={precio => setPrecio(precio)}
                 />
               </div>
-            </div>
+            </div> */}
+            {/* Filtro Precio */}
+
 
             <section id="/* productos */" className='card-container'>
               {/* <div className='row'> */}
