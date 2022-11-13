@@ -5,8 +5,8 @@ import { getProducts } from '../actions/productActions'
 import { useParams, Link } from 'react-router-dom'
 import { useAlert } from 'react-alert'
 import Pagination from 'react-js-pagination'
-/* import Slider from 'rc-slider'
-import 'rc-slider/assets/index.css' */
+import Slider from 'rc-slider'
+import 'rc-slider/assets/index.css'
 
 export const Home = () => {
   const params = useParams();
@@ -40,7 +40,7 @@ export const Home = () => {
             <h1 id="encabezado_productos">Galería</h1>
             
             {/* Filtro Precio */}
-            {/* <div className='d-flex justify-content-center mb-5 mt-3 px-5'>
+            <div className='d-flex justify-content-center mb-5 mt-3 px-5'>
               <div className='col-6'>
                 <Slider
                   range
@@ -62,7 +62,7 @@ export const Home = () => {
                   onChange={precio => setPrecio(precio)}
                 />
               </div>
-            </div> */}
+            </div>
             {/* Filtro Precio */}
 
 

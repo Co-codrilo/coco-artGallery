@@ -5,7 +5,8 @@ const PerfilClient = () => {
   return (
     <div className="perfil ">
         <div className='dropdown perfil-usuario'>
-          <Link to={'#!'} className='btn dropdown-toggle' type='button' id='dropDownMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+          <Link to={'#!'} className='btn dropdown-toggle d-flex align-items-center' type='button' id='dropDownMenu' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+            <h5 className='align-self-end me-3'>Login</h5>
             <span className='bi bi-person fa-2x'></span>
           </Link>
           <div className='dropdown-menu' aria-labelledby='dropDownMenu'>
