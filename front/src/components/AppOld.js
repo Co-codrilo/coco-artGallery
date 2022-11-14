@@ -14,6 +14,7 @@ import Registro from '../components/Registro/Registro.jsx'
 import Login from './user/Login'
 import ProductsList from './admin/ProductsList';
 import NewProduct from './admin/newProduct';
+import { Register } from "./user/register";
 
 const AppOld = () => {
 
@@ -33,6 +34,7 @@ const AppOld = () => {
             <Route path='/producto/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path="/registro" element={<Registro />} />
+            <Route path='/register' element={<Register/>}/>
             <Route path='/dashboard' element={<Dashboard/>}/>
             <Route path='/ListaProductos' element={<ProductsList/>}/>
             <Route path='/nuevoProducto' element={<NewProduct/>}/>

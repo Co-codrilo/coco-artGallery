@@ -44,8 +44,6 @@ header {
 }
 
 .logo {
-  width: 3.5rem;
-  height: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +56,7 @@ header {
   object-fit: cover;
 }
 
-.logo span {
+.logo div{
   display: none;
 }
 
@@ -123,25 +121,29 @@ header {
     display: grid;
     grid-template:
       'logo-nav menu-nav perfil-nav' auto/
-      25% auto 25%;
+      30% auto 30%;
     position: static;
   }
 
   .logo img {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
     object-fit: cover;
   }
 
-  .logo span {
+  .logo div{
     display: block;
-    color: black;
-    font-size: 24px;
   }
-  .logo span:hover {
+
+  /* .logo span {
+    font-size: 24px;
+    
+    border: dotted;
+  }
+  .logo div:hover {
     color: black;
     text-decoration: none;
-  }
+  } */
 
   .header-perfil {
     display: none;
@@ -154,17 +156,7 @@ header {
     justify-content: center;
     align-items: center;
     font-family: var(--logo-font);
-
-    /* border: dotted blue; */
   }
-
-  /* .logo img {
-    width: 25%;
-    height: 30px;
-    object-fit: cover;
-
-    border: dotted;
-  } */
 
   .menu {
     grid-area: menu-nav;
@@ -172,8 +164,6 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
-    /* border: dotted rgb(255, 25, 0); */
   }
 
   .menu a {
@@ -192,9 +182,6 @@ header {
     height: 30px;
     display: flex;
     justify-content: center;
-    
-
-    /* border: dotted rgb(3, 82, 41); */
   }
 }
 /* TABLET */

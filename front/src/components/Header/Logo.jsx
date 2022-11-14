@@ -5,7 +5,9 @@ const Logo = () => {
     <Link to={'/'}>
       <div className="logo">
         <picture><img src='../images/cocodrilos.png' alt="Logo" /></picture>
-        <span>COCODRILO</span>
+        <div className="footer-registro-form">
+          <p>Arte de <span>Cocodrilos</span></p>
+        </div>
       </div>
     </Link>
   )
