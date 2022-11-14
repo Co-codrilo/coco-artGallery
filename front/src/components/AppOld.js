@@ -10,7 +10,8 @@ import { ProductDetails } from './products/ProductDetails';
 import Cart from './Cart';
 import Dashboard from './admin/Dashboard';
 import Registro from '../components/Registro/Registro.jsx'
-import Login from '../components/Login/Login.jsx'
+/* import Login from '../components/Login/Login.jsx' */
+import Login from './user/Login'
 import ProductsList from './admin/ProductsList';
 import NewProduct from './admin/newProduct';
 
@@ -26,7 +27,9 @@ const AppOld = () => {
           <Routes>
             {/* <Route path="/admin" element={<Home/>} /> */}
             <Route path="/" element={<ClientHome />} />
-            <Route path='/login' element={<Login/>}/>
+            <Route path="/home" element={<ClientHome />} />
+            {/* <Route path='/login' element={<Login/>}/> */}
+            <Route path='/login' element={<Login/>} />
             <Route path='/producto/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path="/registro" element={<Registro />} />

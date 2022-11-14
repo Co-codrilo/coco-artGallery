@@ -10,7 +10,7 @@ const PerfilClient = () => {
             <span className='bi bi-person fa-2x'></span>
           </Link>
           <div className='dropdown-menu' aria-labelledby='dropDownMenu'>
-            <Link to='/' className='dropdown-item'>Cliente</Link>
+            <Link to='/login' className='dropdown-item'>Inicio sesión</Link>
             <Link to='/dashboard' className='dropdown-item'>Administrador</Link>
             <Link to='/' className='dropdown-item'>Cerrar Sesión</Link>
           </div>
