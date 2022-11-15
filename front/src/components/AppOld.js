@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HeaderPerfil from "./Header/Header_perfil";
 /* import Header from './Header'; */
 import HeaderCliente from './Header/HeaderCliente';
@@ -14,9 +14,14 @@ import Registro from '../components/Registro/Registro.jsx'
 import Login from './user/Login'
 import ProductsList from './admin/ProductsList';
 import NewProduct from './admin/newProduct';
-import { Register } from "./user/register";
+import { Register } from "./user/Register";
+import { loadUser } from '../actions/userActions';
+import store from '../store'
 
 const AppOld = () => {
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, [])
 
   return (
     <Router>

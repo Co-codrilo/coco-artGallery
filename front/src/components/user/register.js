@@ -7,35 +7,36 @@ import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
   const [user, setUser] = useState({
-    nombre: '',
-    email: '',
-    password: '',
-    phone: '',
-    address: '',
-    birthday: ''
+    nombre: "",
+    email: "",
+    password: "",
+    phone: "",
+    address: "",
+    birthday: "",
   })
 
   const navigate = useNavigate();
   const { nombre, email, password, phone, address, birthday } = user;
-  const [avatar, setAvatar] = useState('');
-  const [avatarPreview, setAvatarPreview] = useState('https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-default-avatar-profile-icon-vector-social-media-user-image-vector-illustration-227787227.jpg');
+  const [avatar, setAvatar] = useState("");
+  const [avatarPreview, setAvatarPreview] = useState("https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-default-avatar-profile-icon-vector-social-media-user-image-vector-illustration-227787227.jpg")
   const alert = useAlert();
   const dispatch = useDispatch();
   const { isAuthenticated, error, loading } = useSelector(state => state.auth)
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/');
+      navigate("/")
     }
     if (error) {
-      dispatch(clearErrors);
+      dispatch(clearErrors)
     }
-  }, [dispatch, isAuthenticated, error, alert])
+  }, [dispatch, navigate, isAuthenticated, error, alert])
 
   const submitHandler = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
+    
     formData.set('nombre', nombre);
     formData.set('email', email);
     formData.set('password', password);
@@ -48,7 +49,7 @@ export const Register = () => {
   }
 
   const onChange = e => {
-    if (e.target.name === 'avatar') {
+    if (e.target.name === "avatar") {
       const reader = new FileReader();
 
       reader.onload = () => {
@@ -79,51 +80,51 @@ export const Register = () => {
               </div>
 
 
-              <form action="/" className="registro-form" onSubmit={submitHandler} encType='multipart/form-data'>
+              <form className="registro-form" onSubmit={submitHandler} encType='multipart/form-data'>
                 <h1>Registro de usuario</h1>
                 <div className='registro-fields'>
 
                   <div className='registro-field'>
-                    <label for='nombre'>Nombre completo</label>
+                    <label htmlFor='name_field'>Nombre completo</label>
                     <input
                       type='name'
-                      id='nombre'
+                      id='name_field'
                       name='nombre'
-                      placeholder='Nombre Apellido'
                       value={nombre}
                       onChange={onChange}
+                      placeholder='Nombre y Apellidos'
                     />
                   </div>
 
                   <div className='registro-field'>
-                    <label for='email'>Email</label>
+                    <label htmlFor='email_field'>Email</label>
                     <input
                       type='email'
-                      id='email'
+                      id='email_field'
                       name='email'
-                      placeholder='pepito@ejemplo.com'
                       value={email}
                       onChange={onChange}
+                      placeholder='pepito@ejemplo.com'
                     />
                   </div>
 
                   <div className='registro-field'>
-                    <label for='password'>Contraseña</label>
+                    <label htmlFor='password_field'>Contraseña</label>
                     <input
                       type='password'
-                      id='password'
+                      id='password_field'
                       name='password'
-                      placeholder='********'
                       value={password}
                       onChange={onChange}
+                      placeholder='********'
                     />
                   </div>
 
                   <div className='registro-field'>
-                    <label for='apellido'>Teléfono</label>
+                    <label htmlFor='phone_field'>Teléfono</label>
                     <input
                       type='text'
-                      id='apellido'
+                      id='phone_field'
                       name='phone'
                       placeholder='Teléfono'
                       value={phone}
@@ -132,11 +133,11 @@ export const Register = () => {
                   </div>
 
                   <div className='registro-field'>
-                    <label for='apellido'>Dirección</label>
+                    <label htmlFor='address_field'>Dirección</label>
                     <input
                       type='text'
-                      id='apellido'
-                      name='birthday'
+                      id='address_field'
+                      name='address'
                       placeholder='Dirección'
                       value={address}
                       onChange={onChange}
@@ -144,10 +145,10 @@ export const Register = () => {
                   </div>
 
                   <div className='registro-field'>
-                    <label for='apellido'>Fecha de nacimiento</label>
+                    <label htmlFor='date_field'>Fecha de nacimiento</label>
                     <input
                       type='date'
-                      id='apellido'
+                      id='date_field'
                       name='birthday'
                       value={birthday}
                       onChange={onChange}

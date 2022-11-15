@@ -4,10 +4,17 @@ const catchAsyncErrors = require('../middleware/catchAsyncErrors')
 const tokenEnviado = require("../utils/jwtToken");
 const sendEmail = require('../utils/sendEmail')
 const crypto = require('crypto');
+const cloudinary = require("cloudinary")
 
 //Registrar un nuevo usuario /api/usuario/registro
 exports.registroUsuario = catchAsyncErrors(async (req, res, next) => {
-  const { nombre, email, phone, address, birthday, password } = req.body;
+  const { nombre, email, password, phone, address, birthday } = req.body;
+
+  const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    folder: "avatars",
+    width: 240,
+    crop: "scale"
+  })
 
   const user = await User.create({
     nombre,
@@ -17,8 +24,8 @@ exports.registroUsuario = catchAsyncErrors(async (req, res, next) => {
     address,
     birthday,
     avatar: {
-      public_id: "ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp",
-      url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKZwmqodcPdQUDRt6E5cPERZDWaqy6ITohlQ&usqp=CAU"
+      public_id: result.public_id,
+      url: result.secure_url
     }
   })
   tokenEnviado(user, 201, res)
@@ -173,7 +180,7 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 
 
 /* Update perfil de usuario (logueado) */
-exports.updateProfile=catchAsyncErrors(async(req,res,next)=>{
+exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     nombre: req.body.nombre,
     email: req.body.email,
@@ -191,7 +198,7 @@ exports.updateProfile=catchAsyncErrors(async(req,res,next)=>{
   })
 
   res.status(200).json({
-    success:true,
+    success: true,
     user
   })
 
@@ -225,7 +232,7 @@ exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
 })
 
 //Actualizar perfil de usuario (como administrador)
-exports.updateUser= catchAsyncErrors(async(req,res,next)=>{
+exports.updateUser = catchAsyncErrors(async (req, res, next) => {
   const nuevaData = {
     nombre: req.body.nombre,
     email: req.body.email,
@@ -235,7 +242,7 @@ exports.updateUser= catchAsyncErrors(async(req,res,next)=>{
     role: req.body.rol
   }
 
-  const user= await User.findByIdAndUpdate(req.params.id, nuevaData, {
+  const user = await User.findByIdAndUpdate(req.params.id, nuevaData, {
     new: true,
     runValidators: true,
     useFindAndModify: false
@@ -250,7 +257,7 @@ exports.updateUser= catchAsyncErrors(async(req,res,next)=>{
 
 
 /* Eliminar usuario (admin) */
-exports.deleteUser= catchAsyncErrors(async(req,res,next)=>{
+exports.deleteUser = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
