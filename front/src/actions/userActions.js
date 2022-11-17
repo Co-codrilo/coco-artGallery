@@ -15,7 +15,10 @@ import {
   LOGOUT_FAIL,
   UPDATE_PROFILE_REQUEST,
   UPDATE_PROFILE_SUCCESS,
-  UPDATE_PROFILE_FAIL
+  UPDATE_PROFILE_FAIL,
+  UPDATE_PASSWORD_REQUEST,
+  UPDATE_PASSWORD_SUCCESS,
+  UPDATE_PASSWORD_FAIL
 } from '../constants/userConstans'
 
 /* Login */
@@ -133,6 +136,34 @@ export const logout = () => async (dispatch) => {
   }
 }
 /* Logout user */
+
+
+/* ACTUALIZAR CONTRASEÑA */
+export const updatePassword = (passwords) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_PASSWORD_REQUEST })
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const { data } = await axios.put('/api/yo/updatePassword', passwords, config)
+
+    dispatch({
+      type: UPDATE_PASSWORD_SUCCESS,
+      payload: data.user
+    })
+  }
+  catch (error) {
+    dispatch({
+      type: UPDATE_PASSWORD_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+/* ACTUALIZAR CONTRASEÑA */
+
 
 /* Clear error */
 export const clearErrors = () => async (dispatch) => {

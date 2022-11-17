@@ -92,7 +92,7 @@ export const UpdateProfile = () => {
 
 
               <form className="registro-form" onSubmit={submitHandler} encType='multipart/form-data'>
-                <h1>Registro de usuario</h1>
+                <h2 className='mb-4'>Actualizar Perfil</h2>
                 <div className='registro-fields'>
 
                   <div className='registro-field'>
