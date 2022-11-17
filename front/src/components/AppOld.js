@@ -22,6 +22,7 @@ import ProtectedRoute from '../routes/ProtectedRoute';
 import { UpdateProfile } from './user/UpdateProfile';
 import { UpdatePassword } from './user/UpdatePassword';
 import { ForgotPassword } from './user/ForgotPassword';
+import { NewPassword } from './user/NewPassword';
 
 const AppOld = () => {
   useEffect(() => {
@@ -48,6 +49,7 @@ const AppOld = () => {
             <Route path='/yo/update' element={<UpdateProfile/>} />
             <Route path='/password/update' element={<UpdatePassword/>} />
             <Route path='/password/forgot' element={<ForgotPassword/>}/>
+            <Route path='/resetPassword/:token' element={<NewPassword/>}/>
 
 
             <Route path='/producto/:id' element={<ProductDetails />} />
