@@ -19,6 +19,7 @@ import { loadUser } from '../actions/userActions';
 import store from '../store'
 import { Profile } from './user/Profile';
 import ProtectedRoute from '../routes/ProtectedRoute';
+import { UpdateProfile } from './user/UpdateProfile';
 
 const AppOld = () => {
   useEffect(() => {
@@ -43,12 +44,13 @@ const AppOld = () => {
             <Route path='/login' element={<Login />} />
             <Route path='/yo' element={<Profile />} />
 
+
             <Route path='/producto/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/ListaProductos' element={<ProductsList />} />
             <Route path='/nuevoProducto' element={<NewProduct />} />
             <Route path='/search/:keyword' element={<ClientHome />} />
-
+            <Route path='/yo/update' element={<UpdateProfile/>} />
 
             {/* ------- Rutas protegidas ------- */}
             <Route path='/dashboard'
