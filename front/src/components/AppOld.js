@@ -21,6 +21,7 @@ import { Profile } from './user/Profile';
 import ProtectedRoute from '../routes/ProtectedRoute';
 import { UpdateProfile } from './user/UpdateProfile';
 import { UpdatePassword } from './user/UpdatePassword';
+import { ForgotPassword } from './user/ForgotPassword';
 
 const AppOld = () => {
   useEffect(() => {
@@ -46,6 +47,7 @@ const AppOld = () => {
             <Route path='/yo' element={<Profile />} />
             <Route path='/yo/update' element={<UpdateProfile/>} />
             <Route path='/password/update' element={<UpdatePassword/>} />
+            <Route path='/password/forgot' element={<ForgotPassword/>}/>
 
 
             <Route path='/producto/:id' element={<ProductDetails />} />

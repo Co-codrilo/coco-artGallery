@@ -18,7 +18,10 @@ import {
   UPDATE_PROFILE_FAIL,
   UPDATE_PASSWORD_REQUEST,
   UPDATE_PASSWORD_SUCCESS,
-  UPDATE_PASSWORD_FAIL
+  UPDATE_PASSWORD_FAIL,
+  FORGOT_PASSWORD_REQUEST,
+  FORGOT_PASSWORD_SUCCESS,
+  FORGOT_PASSWORD_FAIL
 } from '../constants/userConstans'
 
 /* Login */
@@ -163,6 +166,33 @@ export const updatePassword = (passwords) => async (dispatch) => {
   }
 }
 /* ACTUALIZAR CONTRASEÑA */
+
+
+/* Olvide contraseña (forgot password) recuperacion contraseña */
+export const forgotPassword = (email) => async (dispatch) => {
+  try {
+    dispatch({ type: FORGOT_PASSWORD_REQUEST })
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    const { data } = await axios.post('/api/forgotPassword', email, config)
+
+    dispatch({
+      type: FORGOT_PASSWORD_SUCCESS,
+      payload: data.user
+    })
+  }
+  catch (error) {
+    dispatch({
+      type: FORGOT_PASSWORD_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+/* Olvide contraseña (forgot password) recuperacion contraseña */
 
 
 /* Clear error */
