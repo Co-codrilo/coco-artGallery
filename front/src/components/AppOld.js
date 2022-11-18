@@ -7,7 +7,9 @@ import ClientHome from "./ClientHome";
 import Footer from "./Footer.jsx";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ProductDetails } from './products/ProductDetails';
-import Cart from './Cart';
+/* import Cart from './Cart'; */
+import Cart from './Cart/Cart';
+import Compras from './Cart/CartHome'
 import Dashboard from './admin/Dashboard';
 /* import Registro from '../components/Registro/Registro.jsx' */
 /* import Login from '../components/Login/Login.jsx' */
@@ -53,7 +55,9 @@ const AppOld = () => {
 
 
             <Route path='/producto/:id' element={<ProductDetails />} />
-            <Route path='/cart' element={<Cart />} />
+            {/* <Route path='/cart' element={<Cart />} /> */}
+            <Route path="/carrito" element={< Cart/>}/>
+            <Route path='/compras' element={<Compras/>}/>
             <Route path='/ListaProductos' element={<ProductsList />} />
             <Route path='/nuevoProducto' element={<NewProduct />} />
             <Route path='/search/:keyword' element={<ClientHome />} />

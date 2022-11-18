@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import { useAlert } from 'react-alert'
 import { Carousel } from 'react-bootstrap'
+import { addItemToCart } from '../../actions/cartActions'
 
 
 export const ProductDetails = () => {
@@ -42,6 +43,10 @@ export const ProductDetails = () => {
     setQuantity(qty)
   }
   /* Cantidad del producto que el cliente va a comprar */
+  const addToCart = () => {
+    dispatch(addItemToCart(id, quantity));
+    alert.success('Producto agregado al carrito')
+  }
 
   return (
     <Fragment>
@@ -77,7 +82,14 @@ export const ProductDetails = () => {
                 <input type="number" className="form-control count d-inline" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
               </div>
-              <button type="button" id="carrito_btn" className="btn btn-primary d-inline ml-4" disabled={product.inventario === 0}>Agregar al Carrito</button>
+              <button
+                type="button"
+                id="cart_btn"
+                className="btn btn-primary d-inline ml-4"
+                disabled={product.inventario === 0}
+                onClick={addToCart}
+              >Agregar al Carrito
+              </button>
               {/* Cantidad del producto que el cliente va a comprar */}
 
               <hr />
