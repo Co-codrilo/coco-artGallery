@@ -77,9 +77,11 @@ export const ProductDetails = () => {
               <p id="precio_producto">${product.precio}</p>
 
               {/* Cantidad del producto que el cliente va a comprar */}
-              <div className="stockCounter d-inline">
+              <div className='d-flex'>
+
+              <div className="stockCounter d-flex">
                 <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
-                <input type="number" className="form-control count d-inline" value={quantity} readOnly />
+                <input type="number" className="form-control count p-0 w-25 text-center" value={quantity} readOnly />
                 <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
               </div>
               <button
@@ -90,6 +92,9 @@ export const ProductDetails = () => {
                 onClick={addToCart}
               >Agregar al Carrito
               </button>
+              </div>
+
+
               {/* Cantidad del producto que el cliente va a comprar */}
 
               <hr />
