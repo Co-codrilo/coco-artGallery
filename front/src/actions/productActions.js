@@ -7,7 +7,10 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
+  ADMIN_PRODUCTS_REQUEST,
+  ADMIN_PRODUCTS_SUCCESS,
+  ADMIN_PRODUCTS_FAIL
 } from '../constants/productConstants';
 
 export const getProducts = (currentPage=1, keyword='', precio) => async (dispatch) => {
@@ -29,6 +32,28 @@ export const getProducts = (currentPage=1, keyword='', precio) => async (dispatc
     })
   }
 }
+
+
+/* ADMIN - get products */
+export const getAdminProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: ADMIN_PRODUCTS_REQUEST })
+
+    const { data } = await axios.get('/api/admin/productos')
+
+    dispatch({
+      type: ADMIN_PRODUCTS_SUCCESS,
+      payload: data.products
+    })
+  } catch (error) {
+    dispatch({
+      type: ADMIN_PRODUCTS_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+/* ADMIN - get products */
+
 
 
 //VER DETALLE DEL PRODUCTO

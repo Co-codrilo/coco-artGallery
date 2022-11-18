@@ -13,7 +13,7 @@ export const ProductDetails = () => {
   const { id } = useParams();
   const alert = useAlert();
   const [quantity, setQuantity] = useState(1)
-  
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductDetails(id))
@@ -78,20 +78,19 @@ export const ProductDetails = () => {
 
               {/* Cantidad del producto que el cliente va a comprar */}
               <div className='d-flex'>
-
-              <div className="stockCounter d-flex">
-                <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
-                <input type="number" className="form-control count p-0 w-25 text-center" value={quantity} readOnly />
-                <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
-              </div>
-              <button
-                type="button"
-                id="cart_btn"
-                className="btn btn-primary d-inline ml-4"
-                disabled={product.inventario === 0}
-                onClick={addToCart}
-              >Agregar al Carrito
-              </button>
+                <div className="stockCounter d-flex">
+                  <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+                  <input type="number" className="form-control count p-0 w-25 text-center" value={quantity} readOnly />
+                  <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
+                </div>
+                <button
+                  type="button"
+                  id="cart_btn"
+                  className="btn btn-primary d-inline ml-4"
+                  disabled={product.inventario === 0}
+                  onClick={addToCart}
+                >Agregar al Carrito
+                </button>
               </div>
 
 
