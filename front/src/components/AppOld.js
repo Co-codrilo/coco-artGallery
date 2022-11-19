@@ -14,8 +14,10 @@ import Dashboard from './admin/Dashboard';
 /* import Registro from '../components/Registro/Registro.jsx' */
 /* import Login from '../components/Login/Login.jsx' */
 import Login from './user/Login'
+
 import ProductsList from './admin/ProductsList';
-import NewProduct from './admin/newProduct';
+import NewProduct from './admin/NewProduct';
+
 import { Register } from "./user/Register";
 import { loadUser } from '../actions/userActions';
 import store from '../store'
@@ -58,8 +60,10 @@ const AppOld = () => {
             {/* <Route path='/cart' element={<Cart />} /> */}
             <Route path="/carrito" element={< Cart/>}/>
             <Route path='/compras' element={<Compras/>}/>
+
             <Route path='/ListaProductos' element={<ProductsList />} />
             <Route path='/nuevoProducto' element={<NewProduct />} />
+
             <Route path='/search/:keyword' element={<ClientHome />} />
 
             {/* ------- Rutas protegidas ------- */}

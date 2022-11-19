@@ -59,7 +59,8 @@ const productsSchema = mongoose.Schema({
   },
   inventario: {//Por motivo de mi aplicativo este se podría cambiar por el calendario y la disponibilidad
     type: Number,
-    required: [true, "Cantidad máxima del producto no puede sobrepasar 99999"],
+    required: [true, "Por favor registre el stock del producto"],
+    maxLength: [5, "Cantidad maxima del producto no puede sobrepasar 99999"],
     default: 0
   },
   numCalificaciones: {

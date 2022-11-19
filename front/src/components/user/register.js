@@ -81,7 +81,7 @@ export const Register = () => {
 
 
               <form className="registro-form" onSubmit={submitHandler} encType='multipart/form-data'>
-                <h1>Registro de usuario</h1>
+                <h3>Registro de usuario</h3>
                 <div className='registro-fields'>
 
                   <div className='registro-field'>

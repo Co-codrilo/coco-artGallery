@@ -10,16 +10,19 @@ import {
   CLEAR_ERRORS,
   ADMIN_PRODUCTS_REQUEST,
   ADMIN_PRODUCTS_SUCCESS,
-  ADMIN_PRODUCTS_FAIL
+  ADMIN_PRODUCTS_FAIL,
+  NEW_PRODUCT_REQUEST,
+  NEW_PRODUCT_SUCCESS,
+  NEW_PRODUCT_FAIL
 } from '../constants/productConstants';
 
-export const getProducts = (currentPage=1, keyword='', precio) => async (dispatch) => {
+export const getProducts = (currentPage = 1, keyword = '', precio) => async (dispatch) => {
   try {
     dispatch({ type: ALL_PRODUCTS_REQUEST })
 
-    let link= `/api/productos?keyword=${keyword}&page=${currentPage}&precio[gte]=${precio[0]}&precio[lte]=${precio[1]}`
+    let link = `/api/productos?keyword=${keyword}&page=${currentPage}&precio[gte]=${precio[0]}&precio[lte]=${precio[1]}`
 
-    const {data} = await axios.get(link)
+    const { data } = await axios.get(link)
 
     dispatch({
       type: ALL_PRODUCTS_SUCCESS,
@@ -32,7 +35,6 @@ export const getProducts = (currentPage=1, keyword='', precio) => async (dispatc
     })
   }
 }
-
 
 /* ADMIN - get products */
 export const getAdminProducts = () => async (dispatch) => {
@@ -54,6 +56,32 @@ export const getAdminProducts = () => async (dispatch) => {
 }
 /* ADMIN - get products */
 
+
+/* NUEVO PRODUCTO -ADMIN */
+export const newProduct = (productData) => async (dispatch) => {
+  try {
+    dispatch({ type: NEW_PRODUCT_REQUEST })
+
+    const config = {
+      header: {
+        'Content-Type': 'application/json'
+      }
+    }
+
+    const { data } = await axios.post('/api/producto/nuevo', productData, config)
+
+    dispatch({
+      type: NEW_PRODUCT_SUCCESS,
+      payload: data
+    })
+  } catch (error) {
+    dispatch({
+      type: NEW_PRODUCT_FAIL,
+      payload: error.response.data.message
+    })
+  }
+}
+/* NUEVO PRODUCTO -ADMIN */
 
 
 //VER DETALLE DEL PRODUCTO
