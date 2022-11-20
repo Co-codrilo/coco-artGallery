@@ -22,7 +22,7 @@ const PerfilClient = () => {
         <div className='dropdown perfil-usuario d-flex align-items-center'>
       <Link to={'/compras'}> {/* /compras or /carrito */}
         <div className='d-flex align-items-center'>
-          <i class="bi bi-cart fa-3x text-dark d-flex align-items-center m-1" aria-hidden="false"></i>
+          <i className="bi bi-cart fa-3x text-dark d-flex align-items-center m-1" aria-hidden="false"></i>
           <span className="ml-1 bg-gradient py-2 px-3 text-dark shadow-sm" id="cart_count">{cartItems.length}</span>
         </div>
       </Link>

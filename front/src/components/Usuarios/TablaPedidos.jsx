@@ -6,7 +6,7 @@ const TablaPedidos = () => {
     <div className="sales-card-body">
       <h2>Lista de Pedidos</h2>
 
-      <table class="table table-hover table table-bordered" >
+      <table className="table table-hover table table-bordered" >
         <thead>
 
           <tr>
@@ -26,7 +26,7 @@ const TablaPedidos = () => {
           </tr>
         </thead>
         <tbody>
-          <tr class="table">
+          <tr className="table">
 
             <td>1</td>
             <td>7.458.459</td>
@@ -41,7 +41,7 @@ const TablaPedidos = () => {
             <td>26/10/2022</td>
 
           </tr>
-          <tr class="table">
+          <tr className="table">
             <td>2</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -56,7 +56,7 @@ const TablaPedidos = () => {
 
           </tr>
 
-          <tr class="table">
+          <tr className="table">
             <td>3</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -71,7 +71,7 @@ const TablaPedidos = () => {
 
           </tr>
 
-          <tr class="table">
+          <tr className="table">
             <td>4</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -86,7 +86,7 @@ const TablaPedidos = () => {
 
           </tr>
 
-          <tr class="table">
+          <tr className="table">
             <td>5</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -101,7 +101,7 @@ const TablaPedidos = () => {
 
           </tr>
 
-          <tr class="table">
+          <tr className="table">
             <td>6</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -116,7 +116,7 @@ const TablaPedidos = () => {
 
           </tr>
 
-          <tr class="table">
+          <tr className="table">
             <td>7</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -131,7 +131,7 @@ const TablaPedidos = () => {
 
           </tr>
 
-          <tr class="table">
+          <tr className="table">
             <td>8</td>
             <td>7.458.459</td>
             <td>Juana</td>
@@ -145,7 +145,7 @@ const TablaPedidos = () => {
             <td>26/10/2022</td>
 
           </tr>
-          <tr class="table">
+          <tr className="table">
             <td>9</td>
             <td>7.458.459</td>
             <td>Juana</td>

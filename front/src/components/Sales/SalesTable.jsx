@@ -258,7 +258,7 @@ const SalesTable = () => {
   return (
     <>
       <div className="sales-card-body">
-        <div class="row g-2 mb-3">
+        <div className="row g-2 mb-3">
           <h2 className="col-md">Obras vendidas</h2>
           <div className="col-md">
             <div className="form-floating">
@@ -270,9 +270,9 @@ const SalesTable = () => {
               <label htmlFor="inputStartDate">Fecha de inicio</label>
             </div>
           </div>
-          <div class="col-md">
-            <div class="form-floating">
-              <input type="date" class="form-control" id="inputEndDate"></input>
+          <div className="col-md">
+            <div className="form-floating">
+              <input type="date" className="form-control" id="inputEndDate"></input>
               <label htmlFor="inputEndDate">Fecha fin</label>
             </div>
           </div>

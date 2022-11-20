@@ -10,8 +10,8 @@ const DeleteUsuario = () => {
                 </div> 
                <p align="center"><h4>Estás seguro que deseas eliminar el registro?</h4></p>
                <div>
-                <button type="button" class="btn btn-outline-dark">si</button>
-               <button type="button" class="btn btn-outline-dark">no</button></div>
+                <button type="button" className="btn btn-outline-dark">si</button>
+               <button type="button" className="btn btn-outline-dark">no</button></div>
                         <p>Arte de <span>Cocodrilos</span></p>
                     </div> 
                     </div>   
