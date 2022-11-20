@@ -1,27 +1,26 @@
-const express=require("express");
+const express = require("express");
 const app = express();
-const errorMiddleware=require('./middleware/errors');
+const errorMiddleware = require('./middleware/errors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 
 //Uso de constantes importadas
-app.use(bodyParser.json({limit: "50mb"}));
-app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
 app.use(cookieParser());
 app.use(fileUpload());
 
 //Importar rutas
-const productos=require('./routes/products')
-const usuarios=require('./routes/auth')
-const ordenes=require('./routes/orders')
+const productos = require('./routes/products')
+const usuarios = require('./routes/auth')
+const ordenes = require('./routes/orders')
 
-app.use('/api',productos) //Sujeto a decision (ruta del navegador)
-app.use('/api',usuarios)
+app.use('/api', productos) //Sujeto a decision (ruta del navegador)
+app.use('/api', usuarios)
 app.use('/api', ordenes)
-
 
 //Middleweres para manejar errores 
 app.use(errorMiddleware)
 
-module.exports=app
+module.exports = app
