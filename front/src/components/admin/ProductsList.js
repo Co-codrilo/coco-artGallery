@@ -6,7 +6,7 @@ import AdminMenu from './AdminMenu' /* Is Sidebar */
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { clearErrors, getAdminProducts } from '../../actions/productActions'
+import { clearErrors, deleteProduct, getAdminProducts } from '../../actions/productActions'
 import { Link } from "react-router-dom"
 
 const ProductsList = () => {
@@ -14,6 +14,15 @@ const ProductsList = () => {
   const dispatch = useDispatch();
 
   const { loading, error, products } = useSelector(state => state.products);
+
+  const deleteProductHandler = (id) => {
+    const response = window.confirm("Esta seguro de querer borrar este producto?")
+    if (response) {
+      dispatch(deleteProduct(id))
+      alert.success("Producto eliminado correctamente")
+      window.location.reload(false)
+    }
+  }
 
   useEffect(() => {
     dispatch(getAdminProducts());
@@ -66,13 +75,15 @@ const ProductsList = () => {
           <div className='d-flex justify-content-center'>
             <Link to={`/producto/${product._id}`} className="btn btn-outline-primary py-1 px-2">
               <i className="fa fa-eye"></i>
-            </Link><Link to="/" className="btn btn-warning py-1 px-2 mx-3">
-              <i className="fa fa-pencil"></i>
             </Link>
 
-            <Link to="/" className="btn btn-outline-danger py-1 px-2">
-              <i className="bi bi-trash"></i>
+            <Link to={`/updateProduct/${product._id}`} className="btn btn-warning py-1 px-2 mx-3">
+              <i class="fa fa-pencil"></i>
             </Link>
+
+            <button className="btn btn-outline-danger py-1 px-2 ml-2" onClick={() => deleteProductHandler(product._id)}>
+              <i className="bi bi-trash"></i>
+            </button>
           </div>
 
 

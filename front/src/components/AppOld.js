@@ -27,6 +27,7 @@ import { UpdateProfile } from './user/UpdateProfile';
 import { UpdatePassword } from './user/UpdatePassword';
 import { ForgotPassword } from './user/ForgotPassword';
 import { NewPassword } from './user/NewPassword';
+import { UpdateProduct } from './admin/UpdateProduct';
 
 const AppOld = () => {
   useEffect(() => {
@@ -50,21 +51,22 @@ const AppOld = () => {
             {/* <Route path='/login' element={<Login/>}/> */}
             <Route path='/login' element={<Login />} />
             <Route path='/yo' element={<Profile />} />
-            <Route path='/yo/update' element={<UpdateProfile/>} />
-            <Route path='/password/update' element={<UpdatePassword/>} />
-            <Route path='/password/forgot' element={<ForgotPassword/>}/>
-            <Route path='/resetPassword/:token' element={<NewPassword/>}/>
+            <Route path='/yo/update' element={<UpdateProfile />} />
+            <Route path='/password/update' element={<UpdatePassword />} />
+            <Route path='/password/forgot' element={<ForgotPassword />} />
+            <Route path='/resetPassword/:token' element={<NewPassword />} />
 
 
             <Route path='/producto/:id' element={<ProductDetails />} />
             {/* <Route path='/cart' element={<Cart />} /> */}
-            <Route path="/carrito" element={< Cart/>}/>
-            <Route path='/compras' element={<Compras/>}/>
+            <Route path="/carrito" element={< Cart />} />
+            <Route path='/compras' element={<Compras />} />
 
             <Route path='/ListaProductos' element={<ProductsList />} />
             <Route path='/nuevoProducto' element={<NewProduct />} />
 
             <Route path='/search/:keyword' element={<ClientHome />} />
+
 
             {/* ------- Rutas protegidas ------- */}
             <Route path='/dashboard'
@@ -72,8 +74,14 @@ const AppOld = () => {
                 <Dashboard />
               </ProtectedRoute>}
             />
+            <Route path="/updateProduct/:id"
+              element={<ProtectedRoute isAdmin={true}>
+                <UpdateProduct />
+              </ProtectedRoute>}
+            />
             {/* ------- Rutas protegidas ------- */}
-            
+
+
           </Routes>
         </div>
         <Footer />
