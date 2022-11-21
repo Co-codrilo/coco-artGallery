@@ -36,24 +36,20 @@ const NewProduct = () => {
   const { loading, error, success } = useSelector(state => state.newProduct);
 
   useEffect(() => {
-
     if (error) {
       alert.error(error);
       dispatch(clearErrors())
     }
-
     if (success) {
       navigate('/dashboard');
       alert.success('Product created successfully');
       dispatch({ type: NEW_PRODUCT_RESET })
     }
-
-  }, [dispatch, alert, error, success])
+  }, [dispatch, alert, error, success, navigate])
 
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     const formData = new FormData();
     formData.set('nombre', nombre);
     formData.set('autor', autor);
@@ -62,32 +58,25 @@ const NewProduct = () => {
     formData.set('categoria', categoria);
     formData.set('inventario', inventario);
     formData.set('vendedor', vendedor);
-
     imagen.forEach(img => {
       formData.append('imagen', img)
     })
-
     dispatch(newProduct(formData))
   }
 
 
   const onChange = e => {
-
     const files = Array.from(e.target.files)
-
     setImagenPreview([]);
     setImagen([])
-
     files.forEach(file => {
       const reader = new FileReader();
-
       reader.onload = () => {
         if (reader.readyState === 2) {
           setImagenPreview(oldArray => [...oldArray, reader.result])
           setImagen(oldArray => [...oldArray, reader.result])
         }
       }
-
       reader.readAsDataURL(file)
     })
   }
@@ -110,7 +99,7 @@ const NewProduct = () => {
                   <span>Cocodrilos</span>
                 </div>
 
-                <form className="p-5" onSubmit={submitHandler} encType='application/json'>
+                <form className="p-5" onSubmit={submitHandler} encType='multipart/form-data'>
                   <h3 className="mb-4">Nueva obra</h3>
 
                   <div className="form-group">
@@ -161,7 +150,8 @@ const NewProduct = () => {
                     <label htmlFor="category_field">Categoria</label>
                     <select className="form-control"
                       id="category_field"
-                      value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+                      value={categoria} 
+                      onChange={(e) => setCategoria(e.target.value)}>
                       {categorias.map(categoria => (
                         <option key={categoria} value={categoria} >{categoria}</option>
                       ))}
@@ -190,10 +180,10 @@ const NewProduct = () => {
                       onChange={(e) => setVendedor(e.target.value)}
                     />
                   </div>
-
+                                    
+                  {/* Imágenes */}
                   <div className='form-group'>
                     <label>Imágenes</label>
-
                     <div className='custom-file'>
                       <input
                         type='file'
@@ -211,7 +201,7 @@ const NewProduct = () => {
                       <img src={img} key={img} alt="Images Preview" className="mt-3 mr-2" width="55" height="52" />
                     ))}
                   </div>
-
+                  {/* Imágenes */}
 
                   <button
                     id="login_button"

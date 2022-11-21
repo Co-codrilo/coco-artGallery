@@ -84,7 +84,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 })
 
 
-//Crear nuevo producto /api/productos
+/* ------------ Crear nuevo producto /api/productos ------------ */
 exports.newProduct = catchAsyncErrors(async (req, res, next) => {
   let imagen = []
   
@@ -94,19 +94,19 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     imagen = req.body.imagen
   }
 
-  let imageLink = []
+  let imagenLink = []
 
   for (let i = 0; i < imagen.length; i++) {
     const result = await cloudinary.v2.uploader.upload(imagen[i], {
       folder: "products"
     })
-    imageLink.push({
+    imagenLink.push({
       public_id: result.public_id,
       url: result.secure_url
     })
   }
 
-  req.body.imagen = imageLink
+  req.body.imagen = imagenLink
   req.body.user = req.user.id;
   const product = await producto.create(req.body);
   res.status(201).json({
@@ -114,7 +114,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     product
   })
 })
-
+/* ------------ Crear nuevo producto /api/productos ------------ */
 
 
 /* Crear o actualizar una review */
