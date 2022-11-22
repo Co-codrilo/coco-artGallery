@@ -42,7 +42,7 @@ const PerfilClient = () => {
             {user && user.role === 'admin' && (
               <Link to='/dashboard' className='dropdown-item'>Administrador</Link>
             )}
-            <Link to='/' className='dropdown-item'>Pedidos</Link>
+            <Link to='/myOrders' className='dropdown-item'>Pedidos</Link>
             <Link to='/yo' className='dropdown-item'>Mi Perfil</Link>
             <Link to='/' onClick={logoutHandler} className='dropdown-item'>Cerrar Sesión</Link>
           </div>

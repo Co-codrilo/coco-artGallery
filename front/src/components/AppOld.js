@@ -32,6 +32,8 @@ import { Shipping } from './Cart/Shipping';
 import { ConfirmOrder } from './Cart/ConfirmOrder';
 import { Payment } from './Cart/Payment';
 import { Success } from './Cart/Success'
+import { ListOrder } from './order/ListOrder';
+import { OrderDetails } from './order/OrderDetails';
 
 const AppOld = () => {
   useEffect(() => {
@@ -89,13 +91,13 @@ const AppOld = () => {
                 <Shipping />
               </ProtectedRoute>}
             />
-            
+
             <Route path="/order/confirm"
               element={<ProtectedRoute>
                 <ConfirmOrder />
               </ProtectedRoute>}
             />
-            
+
             <Route path="/payment"
               element={<ProtectedRoute>
                 <Payment />
@@ -105,8 +107,20 @@ const AppOld = () => {
             <Route path="/success"
               element={<ProtectedRoute>
                 <Success />
-              </ProtectedRoute>} 
-              />
+              </ProtectedRoute>}
+            />
+
+            <Route path="/myOrders"
+              element={<ProtectedRoute>
+                <ListOrder />
+              </ProtectedRoute>}
+            />
+
+            <Route path="/order/:id"
+              element={<ProtectedRoute>
+                <OrderDetails />
+              </ProtectedRoute>}
+            />
             {/* ------- Rutas protegidas ------- */}
 
           </Routes>
