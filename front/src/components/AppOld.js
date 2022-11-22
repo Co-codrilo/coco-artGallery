@@ -28,6 +28,10 @@ import { UpdatePassword } from './user/UpdatePassword';
 import { ForgotPassword } from './user/ForgotPassword';
 import { NewPassword } from './user/NewPassword';
 import { UpdateProduct } from './admin/UpdateProduct';
+import { Shipping } from './Cart/Shipping';
+import { ConfirmOrder } from './Cart/ConfirmOrder';
+import { Payment } from './Cart/Payment';
+import { Success } from './Cart/Success'
 
 const AppOld = () => {
   useEffect(() => {
@@ -79,8 +83,31 @@ const AppOld = () => {
                 <UpdateProduct />
               </ProtectedRoute>}
             />
-            {/* ------- Rutas protegidas ------- */}
 
+            <Route path="/shipping"
+              element={<ProtectedRoute>
+                <Shipping />
+              </ProtectedRoute>}
+            />
+            
+            <Route path="/order/confirm"
+              element={<ProtectedRoute>
+                <ConfirmOrder />
+              </ProtectedRoute>}
+            />
+            
+            <Route path="/payment"
+              element={<ProtectedRoute>
+                <Payment />
+              </ProtectedRoute>}
+            />
+
+            <Route path="/success"
+              element={<ProtectedRoute>
+                <Success />
+              </ProtectedRoute>} 
+              />
+            {/* ------- Rutas protegidas ------- */}
 
           </Routes>
         </div>

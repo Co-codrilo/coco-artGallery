@@ -1,12 +1,14 @@
 import React, { Fragment } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
 import MetaData from '../layout/MetaData'
 
 const CartHome = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const { cartItems } = useSelector(state => state.cart)
+  const { user } = useSelector(state => state.auth)
 
   const increaseQty = (id, quantity, inventario) => {
     const newQty = quantity + 1;
@@ -20,12 +22,21 @@ const CartHome = () => {
     dispatch(addItemToCart(id, newQty))
   }
 
+  const checkOutHandler = () => {
+    if (user) {
+      navigate("/shipping")
+    }
+    else {
+      navigate("/login")
+    }
+  }
+
   const removeCartItemHandler = (id) => {
     dispatch(removeItemFromCart(id))
   }
   return (
     <Fragment>
-      <main className='card-cart'>
+      <main className='card-cart '>
         <MetaData title={'Mi Carrito'} />
         {/* <div className='registro'> */}
         <div className='registro-form-container-cart shadow-sm'>
@@ -33,7 +44,7 @@ const CartHome = () => {
             <img src="../images/cocodrilos.png" alt="logo" className="logo" />
             <span>Cocodrilos</span>
           </div>
-          <form action="/" className="registro-form-cart">
+          <form action='/' className="registro-form-cart">
             {cartItems.length === 0 ? <h4 className="mt-5">Su carrito esta vacio</h4> : (
               <Fragment>
                 {/* <h4 className="my-3">Su Carrito: <b>{productsCart.length} items</b></h4> */}
@@ -105,7 +116,7 @@ const CartHome = () => {
 
                 </section>
                 <div className='button-cart'>
-                  <button type="submit" className="registro-button-cart comprar mt-5">Comprar</button>
+                  <button type="submit" className="registro-button-cart comprar mt-5" onClick={checkOutHandler}>Comprar</button>
                 </div>
 
               </Fragment>
