@@ -1,43 +1,42 @@
-/*
 import React, { useEffect } from 'react'
-import HeaderPerfil from "./Header/Header_perfil";
- import Header from './Header'; 
-import HeaderCliente from './Header/HeaderCliente';
- import Home from './Home'; 
-import ClientHome from "./ClientHome";
-import Footer from "./Footer.jsx";
+import HeaderPerfil from "./components/Header/Header_perfil";
+/* import Header from './Header'; */
+import HeaderCliente from './components/Header/HeaderCliente';
+/* import Home from './Home'; */
+import ClientHome from "./components/ClientHome";
+import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ProductDetails } from './products/ProductDetails';
- import Cart from './Cart'; 
-import Cart from './Cart/Cart';
-import Compras from './Cart/CartHome'
-import Dashboard from './admin/Dashboard';
- import Registro from '../components/Registro/Registro.jsx' 
- import Login from '../components/Login/Login.jsx' 
-import Login from './user/Login'
+import { ProductDetails } from './components/products/ProductDetails';
+/* import Cart from './components/Cart'; */
+import Cart from './components/Cart/Cart';
+import Compras from './components/Cart/CartHome'
+import Dashboard from './components/admin/Dashboard';
+/* import Registro from '../components/Registro/Registro.jsx' */
+/* import Login from '../components/Login/Login.jsx' */
+import Login from './components/user/Login'
 
-import ProductsList from './admin/ProductsList';
-import NewProduct from './admin/NewProduct';
+import ProductsList from './components/admin/ProductsList';
+import NewProduct from './components/admin/NewProduct';
 
-import { Register } from "./user/Register";
-import { loadUser } from '../actions/userActions';
-import store from '../store'
-import { Profile } from './user/Profile';
-import ProtectedRoute from '../routes/ProtectedRoute';
-import { UpdateProfile } from './user/UpdateProfile';
-import { UpdatePassword } from './user/UpdatePassword';
-import { ForgotPassword } from './user/ForgotPassword';
-import { NewPassword } from './user/NewPassword';
-import { UpdateProduct } from './admin/UpdateProduct';
-import { Shipping } from './Cart/Shipping';
-import { ConfirmOrder } from './Cart/ConfirmOrder';
-import { Payment } from './Cart/Payment';
-import { Success } from './Cart/Success'
-import { ListOrder } from './order/ListOrder';
-import { OrderDetails } from './order/OrderDetails';
+import { Register } from "./components/user/Register";
+import { loadUser } from './actions/userActions';
+import store from './store'
+import { Profile } from './components/user/Profile';
+import ProtectedRoute from './routes/ProtectedRoute';
+import { UpdateProfile } from './components/user/UpdateProfile';
+import { UpdatePassword } from './components/user/UpdatePassword';
+import { ForgotPassword } from './components/user/ForgotPassword';
+import { NewPassword } from './components/user/NewPassword';
+import { UpdateProduct } from './components/admin/UpdateProduct';
+import { Shipping } from './components/Cart/Shipping';
+import { ConfirmOrder } from './components/Cart/ConfirmOrder';
+import { Payment } from './components/Cart/Payment';
+import { Success } from './components/Cart/Success'
+import { ListOrder } from './components/order/ListOrder';
+import { OrderDetails } from './components/order/OrderDetails';
 import { useSelector } from 'react-redux';
 
-const AppOld = () => {
+function App() {
   useEffect(() => {
     store.dispatch(loadUser())
   }, [])
@@ -47,17 +46,17 @@ const AppOld = () => {
     <Router>
       <div>
         <HeaderPerfil />
-        { <Header/> }
+        {/* <Header/> */}
         <HeaderCliente />
         <div>
           <Routes>
-            { <Route path="/admin" element={<Home/>} /> }
+            {/* <Route path="/admin" element={<Home/>} /> */}
             <Route path="/" element={<ClientHome />} />
             <Route path="/home" element={<ClientHome />} />
 
-            { <Route path="/registro" element={<Registro />} /> }
+            {/* <Route path="/registro" element={<Registro />} /> */}
             <Route path='/register' element={<Register />} />
-            { <Route path='/login' element={<Login/>}/> }
+            {/* <Route path='/login' element={<Login/>}/> */}
             <Route path='/login' element={<Login />} />
             <Route path='/yo' element={<Profile />} />
             <Route path='/yo/update' element={<UpdateProfile />} />
@@ -67,7 +66,7 @@ const AppOld = () => {
 
 
             <Route path='/producto/:id' element={<ProductDetails />} />
-            { <Route path='/cart' element={<Cart />} /> }
+            {/* <Route path='/cart' element={<Cart />} /> */}
             <Route path="/carrito" element={< Cart />} />
             <Route path='/compras' element={<Compras />} />
 
@@ -77,7 +76,7 @@ const AppOld = () => {
             <Route path='/search/:keyword' element={<ClientHome />} />
 
 
-            { ------- Rutas protegidas ------- }
+            {/* ------- Rutas protegidas ------- */}
             <Route path='/dashboard'
               element={<ProtectedRoute isAdmin={true}>
                 <Dashboard />
@@ -124,7 +123,7 @@ const AppOld = () => {
                 <OrderDetails />
               </ProtectedRoute>}
             />
-            { ------- Rutas protegidas ------- }
+            {/* ------- Rutas protegidas ------- */}
 
           </Routes>
         </div>
@@ -133,8 +132,8 @@ const AppOld = () => {
         )}
       </div>
     </Router>
-  )
+  );
 }
 
-export default AppOld
-*/
+export default App
+
