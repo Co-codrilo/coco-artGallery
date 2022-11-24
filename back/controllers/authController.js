@@ -255,7 +255,7 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
     phone: req.body.phone,
     address: req.body.address,
     birthday: req.body.birthday,
-    role: req.body.rol
+    role: req.body.role
   }
 
   const user = await User.findByIdAndUpdate(req.params.id, nuevaData, {

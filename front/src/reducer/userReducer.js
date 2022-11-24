@@ -25,7 +25,7 @@ import {
   NEW_PASSWORD_SUCCESS,
   FORGOT_PASSWORD_FAIL,
   NEW_PASSWORD_FAIL
-} from "../constants/userConstans";
+} from "../constants/userConstants";
 
 /* Cambios y reducer sobre procesos de autenticacion */
 export const authReducer = (state = { user: {} }, action) => {

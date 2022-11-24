@@ -3,7 +3,7 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { clearErrors, updatePassword } from '../../actions/userActions'
-import { UPDATE_PASSWORD_RESET } from '../../constants/userConstans'
+import { UPDATE_PASSWORD_RESET } from '../../constants/userConstants'
 import MetaData from '../layout/MetaData'
 
 export const UpdatePassword = () => {

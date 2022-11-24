@@ -5,7 +5,7 @@ import { useAlert } from "react-alert"
 import { useDispatch, useSelector } from "react-redux"
 import { updateProfile, loadUser, clearErrors } from '../../actions/userActions'
 /* import { UPDATE_PROFILE_RESET } from '../../constants/userConstants' */
-import { UPDATE_PROFILE_RESET } from '../../constants/userConstans'
+import { UPDATE_PROFILE_RESET } from '../../constants/userConstants'
 
 export const UpdateProfile = () => {
   const navigate = useNavigate();

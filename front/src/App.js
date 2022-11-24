@@ -127,9 +127,9 @@ function App() {
 
           </Routes>
         </div>
-        {!loading && (!isAuthenticated || user.role !== "admin") &&(
-          <Footer />
-        )}
+        {!loading && (!isAuthenticated || user.role!=="admin") &&(
+        <Footer />
+       )}
       </div>
     </Router>
   );
